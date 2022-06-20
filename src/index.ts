@@ -23,7 +23,7 @@ const main = async function () {
 			.input('./watermark.png')
 			.complexFilter([`overlay=(W-w)/2:(H-h)/2`])
 			.saveToFile(`./output/${video}`)
-			.on('start', () => consola.info(`START: Starting the render of ${video}`))
+			.on('start', () => consola.info(`START: starting the render of ${video}`))
 			.on('progress', (progress) => consola.info(`UPDATE (${video}): processing frame ${progress.frames}`))
 			.on('end', () => consola.success(`FINISHED: ${video} render finished`))
 			.on('error', (err) => consola.error(`${err}`));
