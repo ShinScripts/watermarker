@@ -21,7 +21,7 @@ const main = async function () {
 	for (const video of videos) {
 		ffmpeg(`./videos/${video}`)
 			.input('./watermark.png')
-			.complexFilter([`overlay=(W-w)/2:(H-h)/2`])
+			.complexFilter([`overlay=10:10`])
 			.saveToFile(`./output/${video}`)
 			.on('start', () => consola.info(`START: starting the render of ${video}`))
 			.on('progress', (progress) => consola.info(`UPDATE (${video}): processing frame ${progress.frames}`))
