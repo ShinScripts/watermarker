@@ -6,7 +6,7 @@ const main = async function () {
 	const videos = readdirSync('./videos/');
 	const watermark = readdirSync('.').find((i) => i.toLowerCase() === 'watermark.png');
 
-	if (videos.length == 0) {
+	if (videos.length === 0) {
 		consola.error('Videos folder is currently empty, make sure to add all the videos you want watermarked!');
 		return;
 	}
